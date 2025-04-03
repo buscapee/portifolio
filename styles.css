@@ -21,7 +21,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     color: var(--text-color);
-    background: linear-gradient(180deg, var(--background-color) 0%, #1a1a2e 100%);
+    background-color: #2d2a49 !important;
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -31,7 +31,7 @@ header {
     position: absolute;
     top: 0;
     width: 100%;
-    background: rgba(10, 10, 10, 0.2);
+    background: #363255;
     backdrop-filter: blur(8px);
     z-index: 1000;
     padding: 1rem 0;
@@ -364,7 +364,6 @@ section {
     padding: 3rem 2rem;
     min-height: auto;
     position: relative;
-    background: linear-gradient(135deg, rgba(10, 10, 10, 0.8) 0%, rgba(26, 26, 26, 0.8) 100%);
     backdrop-filter: blur(10px);
 }
 
@@ -394,7 +393,7 @@ section {
     max-width: 900px;
     margin: 0 auto;
     align-items: center;
-    background: rgba(26, 26, 26, 0.5);
+    background: #363255;
     padding: 1.5rem;
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -576,7 +575,7 @@ section {
 }
 
 .habilidade-card {
-    background: rgba(26, 26, 26, 0.8);
+    background: #363255;
     border-radius: 12px;
     padding: 1.5rem;
     text-align: center;
@@ -1024,26 +1023,21 @@ section::after {
 
 /* Scrollbar Personalizada */
 ::-webkit-scrollbar {
-    width: 4px;
-    background: #0a0a1a;
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+    width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #0a0a1a;
+    background: transparent;
 }
 
-/* Para Firefox */
+::-webkit-scrollbar-thumb {
+    background-color: #c574da;
+    border-radius: 6px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+}
+
 * {
     scrollbar-width: thin;
-    scrollbar-color: var(--secondary-color) #0a0a1a;
+    scrollbar-color: #c574da transparent;
 }
