@@ -136,3 +136,54 @@ document.querySelectorAll('.habilidade-card').forEach(card => {
         card.style.setProperty('--glow-color', 'transparent');
     });
 });
+
+// Formulário de Contato
+const contactForm = document.getElementById('contact-form');
+
+contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const submitBtn = contactForm.querySelector('.submit-btn');
+    const originalBtnText = submitBtn.innerHTML;
+    
+    try {
+        // Desabilita o botão e mostra loading
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+            <span>Enviando...</span>
+            <i class="fas fa-spinner fa-spin"></i>
+        `;
+
+        // Aqui você pode adicionar a lógica para enviar o formulário
+        // Por exemplo, usando fetch para enviar para um backend
+        await new Promise(resolve => setTimeout(resolve, 1500)); // Simulação de envio
+
+        // Mostra mensagem de sucesso
+        submitBtn.innerHTML = `
+            <span>Mensagem Enviada!</span>
+            <i class="fas fa-check"></i>
+        `;
+
+        // Limpa o formulário
+        contactForm.reset();
+
+        // Restaura o botão após 3 segundos
+        setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+        }, 3000);
+
+    } catch (error) {
+        // Mostra mensagem de erro
+        submitBtn.innerHTML = `
+            <span>Erro ao Enviar</span>
+            <i class="fas fa-exclamation-circle"></i>
+        `;
+
+        // Restaura o botão após 3 segundos
+        setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+        }, 3000);
+    }
+});
